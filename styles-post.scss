@@ -1,0 +1,218 @@
+// .reaction_container {
+//   margin-top: 25px;
+// }
+
+// img {
+//   width: 100%;
+// }
+.body__container {
+    background-color: #f5f5f5;
+  }
+  
+  // main
+  .post_container {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+  }
+  
+  // .reaction-heart {
+  //   transition: fill 0.3s ease;
+  // }
+  
+  .reaction-heart:hover,
+  .reaction-comments:hover,
+  .reaction-save:hover {
+    // fill: red;
+    // color: red;
+    cursor: pointer;
+    // border-color: red;
+    // filter: HSL(0°, 100%, 50%);
+  }
+  
+  .reaction-more-options--hover:hover {
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(205, 205, 205);
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .reaction-more-options {
+    border-radius: 50%;
+  }
+  
+  .post-image {
+    width: 100%;
+  }
+  
+  img .click-here-button {
+    width: 50%;
+  }
+  
+  .author-image {
+    position: absolute;
+    // left: -25px;
+    right: -7px;
+    bottom: -20px;
+    width: 27px;
+    height: 27px;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  .author-image1 {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .article-post-title {
+    font-size: 350%;
+  }
+  
+  .hashtag-web-dev,
+  .hashtag-javascript,
+  .hashtag-programming,
+  .hashtag-productivity {
+    background-color: white;
+    border: none;
+  }
+  
+  .hashtag-web-dev:hover {
+    background-color: rgba(209, 53, 209, 0.375);
+    border-radius: 12px;
+  }
+  
+  .hashtag-javascript:hover {
+    background-color: rgba(191, 191, 52, 0.49);
+    border-radius: 12px;
+  }
+  
+  .hashtag-programming:hover {
+    background-color: rgba(255, 0, 0, 0.238);
+    border-radius: 12px;
+  }
+  
+  .ashtag-productivity:hover {
+    background-color: rgba(0, 0, 255, 0.375);
+    border-radius: 12px;
+  }
+  
+  .article-text {
+    font-size: 2vw;
+  }
+  
+  .comments-section__container {
+    background-color: white;
+  }
+  
+  .toggle-comment-button {
+    border: none;
+    background-color: white;
+  }
+  
+  .subscribe-button {
+    // padding: 10px;
+    outline: 0.2rem solid rgb(225, 224, 224);
+    // border-color: gray;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+  }
+  
+  // .subscribe-button:hover{
+  
+  // }
+  
+  .comments-image {
+    border-radius: 50%;
+    width: 3vw;
+  }
+  
+  // .comment-input__container {
+  //   // width: 48.5vw;
+  //   // height: 10vh;
+  //   // margin-left: 10px;
+  
+  //   width: 600px;
+  //   padding: 20px;
+  //   border: 1px solid #ccc;
+  // }
+  
+  .comment-text-area__container {
+    width: 100%;
+    // box-sizing: border-box;
+    // padding: 10px;
+    // resize: none; /* Deshabilita la redimensión manual del textarea */
+    height: auto; /* Ajusta automáticamente la altura del textarea */
+  }
+  
+  .comment-text-area {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none; /* Deshabilita la redimensión manual del textarea */
+    height: 200px; /* Ajusta automáticamente la altura del textarea */
+  }
+  
+  // ASIDE RIGHT
+  .card__container {
+    border-top-color: black;
+    border-top: 10px solid;
+  }
+  
+  .card__pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    position: relative;
+    top: -25px;
+  }
+  
+  div .custom-sticky-top {
+    top: 80px; /* Ajusta el espacio superior según tus necesidades */
+    // z-index: 1020; /* Asegura que el contenedor esté por encima del contenido */
+  }
+  
+  .hashtags--font-size {
+    font-size: 0.875rem;
+  }
+  
+  @media (min-width: 992px) {
+    .card-title__container {
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+  }
+  
+  // nva bar
+  .site-logo {
+    max-width: var(--max-width, 125px);
+    font-size: var(--font-size, var(--fs-base));
+    font-weight: var(--font-weight, var(--fw-medium));
+    display: inline-flex;
+    flex-shrink: 0;
+    align-self: center;
+    align-items: center;
+    vertical-align: middle;
+    color: var(--base-100);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    outline: 0px;
+    width: 50px;
+    height: 40px;
+  }
+  .site-logo img {
+    width: 100%;
+  }
+  
+  .user__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: none;
+    border: none;
+  }
+  

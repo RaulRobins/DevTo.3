@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles-post.scss" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="body__container">
+    <!-- NAV-BAR -->
+    <header class="header__nav bg-light">
+      <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid d-flex">
+          <!--Button Ofcanvas-->
+          <button
+            class="c-btn c-btn--icon-alone js-hamburger-trigger mx-2 d-md-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"><img src="" alt="" /></span>
+          </button>
+
+          <!--Logo button-->
+          <a class="site-logo">
+            <img
+              src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+              alt=""
+            />
+          </a>
+
+          <!--Lupa Icon-->
+          <a href="">
+            <img src="./img/icons/lupa.svg" alt="" />
+          </a>
+
+          <!--Notification bell-->
+          <a href=""><img src="./img/icons/bell.svg" alt="" /></a>
+
+          <!--User Account Button-->
+          <!-- <button class="user__button" type="submit">
+            <span>
+              <img
+                src="https://res.cloudinary.com/practicaldev/image/fetch/s--4zZ4vSLE--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1135735/1821abf9-98b8-4d79-a4f1-859ca0ef2a5f.png"
+                alt=""
+              />
+            </span>
+          </button> -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- NAV BAR -->
+
+    <div class="container text-center mt-5">
+      <div class="row">
+        <!-- ASIDE -->
+        <aside class="aside__container-left col-1">
+          <div class="reaction_container mt-5 sticky-top custom-sticky-top">
+            <div class="reaction__container-grid">
+              <div class="reaction-like">
+                <img class="reaction-heart" src="images/heart.svg" alt="" />
+                <p class="like-reactions-counts">122</p>
+              </div>
+              <div class="reaction-comments">
+                <img src="images/comment.svg" alt="" class="reaction-icon" />
+                <p class="comment-reactions-count">13</p>
+              </div>
+              <div class="reaction-save">
+                <img src="images/save.svg" alt="" class="reaction-icon" />
+                <p class="save-reaction-count">50</p>
+              </div>
+              <div class="reaction-more-options">
+                <img
+                  src="images/more-options.svg"
+                  alt=""
+                  srcset=""
+                  class="reaction-more-options--hover"
+                />
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!-- ASIDE -->
+
+        <!-- MAIN -->
+        <main class="main__container col-8">
+          <div class="article-wraper">
+            <article class="post_container pb-5">
+              <header class="post-article-header">
+                <div class="image-article-header">
+                  <img
+                    class="post-image rounded-top-2"
+                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--YHP_6uEd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/20ryzulnq1bg8qazngd3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="post-article-title">
+                  <div
+                    class="post-article-author d-flex align-content-start mt-4 ms-5"
+                  >
+                    <div class="author-images__container">
+                      <a href="">
+                        <img
+                          class="author-image1 rounded-3"
+                          src="https://res.cloudinary.com/practicaldev/image/fetch/s--nFcNw0ym--/c_fill,f_auto,fl_progressive,h_50,q_66,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/6880/a7d0629e-2df8-4705-af5a-7c0a226b6e0a.gif"
+                          alt=""
+                          srcset=""
+                        />
+                      </a>
+                      <a href="" class="position-relative">
+                        <img
+                          class="author-image"
+                          src="https://res.cloudinary.com/practicaldev/image/fetch/s--eIJW5yjJ--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/820341/5d291561-0d60-40cf-a9d3-959dab08f1ac.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="author-info ms-2">
+                      <span class="author-name text-start fw-bold">
+                        Nevo David
+                      </span>
+                      <span class="github-info">for GitHub 20k</span>
+                      <p class="date-info text-start">Posted on Aug 8</p>
+                    </div>
+                  </div>
+                  <div
+                    class="reactions-engagement__container d-flex flex-wrap align-content-start mt-2 ms-5"
+                  >
+                    <span class="reaction-engagement-like me-4">
+                      <img
+                        src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"
+                        alt=""
+                      />
+                      <span class="reaction-engagement-like-count">42</span>
+                    </span>
+                    <span class="reaction-engagement-unicorn me-4">
+                      <img
+                        src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
+                        alt=""
+                      />
+                      <span class="reaction-engagement-unicorn-count">21</span>
+                    </span>
+                    <span class="reaction-engagement-exploding-head me-4">
+                      <img
+                        src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
+                        alt=""
+                      />
+                      <span class="reaction-engagement-exploding-head-count"
+                        >19</span
+                      >
+                    </span>
+                    <span class="reaction-engagement-raised-hands me-4">
+                      <img
+                        src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"
+                        alt=""
+                      />
+                      <span class="reaction-engagement-raised-hands-count"
+                        >20</span
+                      >
+                    </span>
+                    <span class="reaction-engagement-fire">
+                      <img
+                        src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
+                        alt=""
+                      />
+                      <span class="reaction-engagement-fire-count">42</span>
+                    </span>
+                  </div>
+                  <h1
+                    class="article-post-title d-flex text-start fw-bold mt-4 ms-5"
+                  >
+                    ✨ 7 open-source libraries you must know in 2023 🪄✨
+                  </h1>
+                  <div
+                    class="hashtags-title__container d-flex flex-wrap align-content-start mt-4 ms-5"
+                  >
+                    <button class="hashtag-web-dev">#Webdev</button>
+                    <button class="hashtag-javascript">#Javascript</button>
+                    <button class="hashtag-programming">#Programming</button>
+                    <button class="hashtag-productivity">#Productivity</button>
+                  </div>
+                </div>
+              </header>
+              <div class="post-article-main mx-5">
+                <div class="article-body-text">
+                  <p class="article-text text-start mt-4">
+                    This week I have discovered some awesome libraries! <br />
+                    Check them, use them, help them with a star ⭐️
+                  </p>
+                  <div class="text-start mt-4">
+                    <div class="optimus-gif__container">
+                      <img
+                        class="post-image"
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--1q6s1OSw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4v274l5qd2ok4a45n6jm.gif"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class="github-library-gif__container mt-5">
+                      <img
+                        class="post-image"
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--9JFIyaaR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0hqvziazi4sj4a9eznq3.gif"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="click-here-button__container mt-3">
+                      <img
+                        class="click-here-button"
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--8ki-aueO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i2hpphq76e9ijktawxft.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <section class="comments-section__container pt-3 mt-1">
+              <header class="comments-section-title mx-5">
+                <div
+                  class="comment-title mt-3 d-flex justify-content-between align-items-center"
+                >
+                  <div class="d-flex">
+                    <h2 class="">
+                      Top comments
+                      <span class="comments-counts">(13)</span>
+                    </h2>
+                    <button class="toggle-comment-button mx-3">
+                      <img src="images/toggle-comment.svg" alt="" />
+                    </button>
+                  </div>
+
+                  <div class="comments-subscribe-button">
+                    <button class="subscribe-button btn btn-outline-secondary">
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
+                <div class="comments__container">
+                  <div class="comments__container-input d-flex mt-3">
+                    <span>
+                      <img
+                        class="comments-image"
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--RmY55OKL--/c_limit,f_auto,fl_progressive,q_auto,w_256/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png"
+                        alt=""
+                      />
+                    </span>
+                    <span class="comment-text-area__container">
+                      <!-- <input type="text" class="comment-input__container" /> -->
+                      <textarea
+                        name=""
+                        id=""
+                        class="comment-text-area"
+                        placeholder="Add to the discussion"
+                      >
+                      </textarea>
+                    </span>
+                  </div>
+                </div>
+                <!-- ´posibles comentarios -->
+              </header>
+            </section>
+          </div>
+        </main>
+        <!-- MAIN -->
+
+        <!-- ASIDE -->
+        <aside class="right-aside col-lg-3 d-none d-lg-block">
+          <div class="card__container card" style="border-top: 30px solid">
+            <div class="card-body">
+              <div
+                class="card-title__container d-flex flex-row align-items-start"
+              >
+                <img
+                  class="card__pic"
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--DgNv801u--/c_fill,f_auto,fl_progressive,h_90,q_66,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/6880/a7d0629e-2df8-4705-af5a-7c0a226b6e0a.gif"
+                  alt=""
+                />
+                <h4 class="card-title">GitHub 20k</h4>
+              </div>
+              <a href="#" class="btn btn-primary w-100 mt-1">Follow</a>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex">
+                <h4 class="card-title__container">
+                  More from
+                  <a href="" class="link-underline-light">GitHub 20k</a>
+                </h4>
+              </li>
+              <li class="list-group-item text-start">
+                🚀 9 open-source libraries YOU HAVE to contribute to in 2023 🔥
+                <ul
+                  class="hashtags--font-size d-flex list-unstyled flex-wrap justify-content-start"
+                >
+                  <li class="opacity-50 me-2">#webdev</li>
+                  <li class="opacity-50 me-2">#javascript</li>
+                  <li class="opacity-50 me-2">#programming</li>
+                  <li class="opacity-50">#productivity</li>
+                </ul>
+              </li>
+              <li class="list-group-item text-start">
+                🚀 Building a contacts management system with NextJS, Supabase,
+                and Flatfile 🥂
+                <ul
+                  class="hashtags--font-size d-flex list-unstyled flex-wrap justify-content-start"
+                >
+                  <li class="opacity-50 me-2">#webdev</li>
+                  <li class="opacity-50 me-2">#react</li>
+                  <li class="opacity-50 me-2">#javascript</li>
+                  <li class="opacity-50">#tutorial</li>
+                </ul>
+              </li>
+              <li class="list-group-item text-start">
+                🚀 7 open-source projects you should contribute to in 2023
+                ⭐️⭐️
+                <ul
+                  class="hashtags--font-size d-flex list-unstyled flex-wrap justify-content-start"
+                >
+                  <li class="opacity-50 me-2">#webdev</li>
+                  <li class="opacity-50 me-2">#javascript</li>
+                  <li class="opacity-50 me-2">#beginners</li>
+                  <li class="opacity-50">#programming</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="card mt-3 sticky-top custom-sticky-top">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-body-secondary">
+                DEV Community
+              </h6>
+              <img
+                src="https://res.cloudinary.com/practicaldev/image/fetch/s--KfYhPrXu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxatl8njvv45ht30hcx9.png"
+                alt=""
+                style="width: 100%"
+              />
+              <a href="#" class="card-link link-underline-light"
+                >Check out this survey</a
+              ><span>
+                and help us moderate our community by becoming a tag moderator
+                here at DEV.</span
+              >
+            </div>
+          </div>
+        </aside>
+        <!-- ASIDE -->
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
