@@ -131,6 +131,18 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+<<<<<<< Updated upstream
+=======
+/*Esto es codigo de Alberto*/
+.buttonErase {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: flex-end;
+ 
+}
+/*Esto es codigo de Alberto*/
+
+>>>>>>> Stashed changes
 .button-reaction-menu img {
   position: relative;
   left: 20px;
