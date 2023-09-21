@@ -4,7 +4,7 @@ const URL_FIREBASE =
 
 /* Functions */
 const parserResponsePersonsFireBase = (object) => {
-  const listPersonParsed = [];
+  const listPostParsed = [];
 
   for (const key in object) {
     const obectParsed = {
@@ -21,6 +21,24 @@ const parserResponsePersonsFireBase = (object) => {
   }
   return listPersonParsed;
 };
+
+
+//Search Button
+const searchButton = document.querySelector('#searchButton');
+
+searchButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const searchPost = document.querySelector('#searchInput');
+    console.log(searchPost.value);
+});
+
+
+//Filter Posts
+var filteredPosts = listPersonParsed.filter(function(posts){
+
+  });
+
+
 
 /* Methods API */
 const getPostsApi = async () => {
