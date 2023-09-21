@@ -2,7 +2,21 @@
 const URL_FIREBASE =
   "https://challenge3-92fe2-default-rtdb.firebaseio.com/.json";
 
+/* Elements DOM */
+const searchButton = document.querySelector("#searchButton");
+const containerListPosts = document.querySelector("#list-posts");
+
 /* Functions */
+const renderPost = (dataPost) => {
+  console.log(dataPost);
+};
+
+const renderListPost = (listPosts) => {
+  listPosts.forEach((post) => {
+    renderPost(post);
+  });
+};
+
 const parserResponsePostFireBase = (object) => {
   const listPostParsed = [];
 
@@ -29,9 +43,8 @@ const parserResponsePostFireBase = (object) => {
   return listPostParsed;
 };
 
+/* Events */
 //Search Button
-const searchButton = document.querySelector("#searchButton");
-
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
   const searchPost = document.querySelector("#searchInput");
@@ -49,9 +62,8 @@ const getPostsApi = async () => {
     });
     const parsed = await response.json();
     const results = parserResponsePostFireBase(parsed);
-    console.log(results);
     // cleanList();
-    // renderListPersons(results);
+    renderListPost(results);
   } catch (error) {
     console.error(error);
   }
