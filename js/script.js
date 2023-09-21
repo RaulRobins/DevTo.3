@@ -39,3 +39,26 @@ const getPostsApi = async () => {
 };
 
 getPostsApi();
+
+
+
+
+const deleteButton = document.getElementById('deleteButton');
+
+deleteButton.addEventListener("click", async (event) => {
+    console.log( "click")
+    console.log( event) /*objeto que representa el event*/
+    console.log( event.target) /*objeto que representa el elemento que recibió el evento*/
+    console.log( event.target.dataset)
+    const response = await fetch(`DB_URL/${event.target.dataset,postId}`,{
+        method:"DELETE"
+    })
+
+    const data = await response.json()
+
+}
+)
+console.log('deleteButton');
+
+
+
