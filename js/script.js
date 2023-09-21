@@ -3,42 +3,43 @@ const URL_FIREBASE =
   "https://challenge3-92fe2-default-rtdb.firebaseio.com/.json";
 
 /* Functions */
-const parserResponsePersonsFireBase = (object) => {
+const parserResponsePostFireBase = (object) => {
   const listPostParsed = [];
 
   for (const key in object) {
     const obectParsed = {
       id: key,
-      avatar: object[key].avatar,
-      name: object[key].name,
-      lastName: object[key].lastName,
-      gender: object[key].gender,
-      date: object[key].date,
-      country: object[key].country,
+      title: object[key].title,
+      img_url: object[key].img_url,
       description: object[key].description,
+      content: object[key].content,
+      date_post: object[key].date_post,
+      author: {
+        avatar: object[key].author.avatar,
+        name: object[key].author.name,
+      },
+      category: object[key].category,
+      tags: object[key].tags,
+      reactions: object[key].reactions,
+      time_read: object[key].time_read,
+      comments: [...object[key].comments],
     };
-    listPersonParsed.push(obectParsed);
+    listPostParsed.push(obectParsed);
   }
-  return listPersonParsed;
+  return listPostParsed;
 };
 
-
 //Search Button
-const searchButton = document.querySelector('#searchButton');
+const searchButton = document.querySelector("#searchButton");
 
-searchButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    const searchPost = document.querySelector('#searchInput');
-    console.log(searchPost.value);
+searchButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const searchPost = document.querySelector("#searchInput");
+  console.log(searchPost.value);
 });
 
-
 //Filter Posts
-var filteredPosts = listPersonParsed.filter(function(posts){
-
-  });
-
-
+// var filteredPosts = listPostParsed.filter(function (posts) {});
 
 /* Methods API */
 const getPostsApi = async () => {
@@ -47,7 +48,7 @@ const getPostsApi = async () => {
       method: "GET",
     });
     const parsed = await response.json();
-    const results = parserResponsePersonsFireBase(parsed);
+    const results = parserResponsePostFireBase(parsed);
     console.log(results);
     // cleanList();
     // renderListPersons(results);
