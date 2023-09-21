@@ -799,9 +799,15 @@ h2 {
 
 /*Esto es codigo de Alberto*/
 .buttonErase {
+ 
   display: flex;
-  flex-direction: inherit;
+  flex-direction: right;
   justify-content: flex-end;
+  margin-left: 525px;
+  color: rgb(50, 41, 41); 
+  padding: 2px 15px; 
+  cursor: pointer; 
+  border-radius: 5px;
  
 }
 /*Esto es codigo de Alberto*/
