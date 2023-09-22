@@ -167,21 +167,21 @@ searchButton.addEventListener("click", (event) => {
   filteredPost = []
   const searchPost = document.querySelector("#searchInput").value;
   if (searchPost.trim().length === 0) {
-    console.log("This is an empty string!");
     filteredPost = allPost;
-    console.log(filteredPost);
+
   }
   else{
     filterListPost = allPost.forEach((post)=>{
-    const result = post.title.match(searchPost);  
-    console.log(result)
+    const lowerCase = post.title.toLowerCase();
+    const result = lowerCase.match(searchPost.toLowerCase());  
+
     if (result != null) {
       const coincidence = post.title;
       filteredPost = allPost.filter(post => post.title === coincidence);      
     }
     
   })
-  console.log(filteredPost);
+
 }
 cleanList();
 renderListPost(filteredPost);
