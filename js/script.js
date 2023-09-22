@@ -144,7 +144,7 @@ searchButton.addEventListener("click", (event) => {
 //Create Post Button
 
 createPostButton.addEventListener("click", (event) => {
-  window.location.href = 'pages/createPost/index.html'  
+  window.location.href = 'http://127.0.0.1:3000/pages/createPost/index.html'  
 });
 
 //Filter Posts
