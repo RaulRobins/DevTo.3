@@ -11,7 +11,6 @@ const createPostButton = document.querySelector(".create-post__button");
 const containerListPosts = document.querySelector("#list-posts");
 
 /* Functions */
-
 const cleanList = () => {
   while (containerListPosts.firstChild) {
     containerListPosts.removeChild(containerListPosts.firstChild);
@@ -32,6 +31,54 @@ const renderListTags = (listTags, tag) => {
 };
 
 const renderPost = (dataPost) => {
+  // elements interactions
+  const reactionItem = document.createElement("li");
+  reactionItem.className = "reaction--item";
+  const listReactions = document.createElement("ul");
+  listReactions.className = "multiple__reactions--container";
+  const spanNumberReactions = document.createElement("span");
+  spanNumberReactions.className = "reactions--number-final";
+  spanNumberReactions.textContent = "reactions";
+  const anchorMainReactions = document.createElement("a");
+  anchorMainReactions.className = "main__reaction--container";
+  anchorMainReactions.appendChild(listReactions);
+  anchorMainReactions.appendChild(spanNumberReactions);
+
+  const txtMessage = document.createElement("span");
+  txtMessage.className = "comments__number--card";
+  txtMessage.textContent = dataPost.comments.length + " " + "comments";
+  const iconMessage = document.createElement("img");
+  iconMessage.className = "comments__number_icon";
+  iconMessage.src = "./img/icons/messaje.svg";
+  iconMessage.alt = "icon message";
+  const numberComments = document.createElement("div");
+  numberComments.className =
+    "comments__number--cards d-flex align-items-center";
+  numberComments.style = "width: 350px;";
+  numberComments.appendChild(iconMessage);
+  numberComments.appendChild(txtMessage);
+
+  const iconRead = document.createElement("img");
+  iconRead.className = "comments__number_icon";
+  iconRead.src = "./img/icons/iconReaction.svg";
+  iconRead.alt = "icon message";
+  const txtMinute = document.createElement("span");
+  txtMinute.className = "";
+  txtMinute.style = "color: gray; font-size:12px";
+  txtMinute.textContent = dataPost.time_read + " " + "min" + " " + "read";
+  const minuteReaction = document.createElement("div");
+  minuteReaction.className = "last__minute__reaction";
+  minuteReaction.style = "width: 18%; display: flex";
+  minuteReaction.appendChild(txtMinute);
+  minuteReaction.appendChild(iconRead);
+
+  const multipleReactions = document.createElement("div");
+  multipleReactions.className = "multiple__reactions__number";
+  multipleReactions.style = "width: 100%; margin-left: 8px;";
+  multipleReactions.appendChild(anchorMainReactions);
+  multipleReactions.appendChild(numberComments);
+  multipleReactions.appendChild(minuteReaction);
+
   // elements tags
   const listTags = document.createElement("ul");
   listTags.className = "card__tags d-flex flex-wrap list-unstyled";
@@ -43,7 +90,15 @@ const renderPost = (dataPost) => {
   // element title
   const cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
+  cardTitle.style = "font-size:28px; font-weight: 800";
   cardTitle.textContent = dataPost.title;
+
+  const rowContainer = document.createElement("div");
+  rowContainer.className = "row container";
+  rowContainer.appendChild(cardTitle);
+  rowContainer.appendChild(cardDescription);
+  rowContainer.appendChild(listTags);
+  rowContainer.appendChild(multipleReactions);
 
   // elements author
   const imgAuthor = document.createElement("img");
@@ -76,19 +131,18 @@ const renderPost = (dataPost) => {
   // Buttons
   const btnEliminar = document.createElement("button");
   const btnEditar = document.createElement("button");
-  const iconEliminar = document.createElement("img");
-  const iconEditar = document.createElement("img");
-  btnEliminar.className = "btn btn-danger m1";
-  btnEditar.className = "btn btn-info m-1";
+  btnEliminar.className = "btn btn-danger btn-sm m-1";
+  btnEditar.className = "btn btn-info btn-sm m-1";
   btnEliminar.textContent = "Eliminar";
   btnEditar.textContent = "Editar";
   btnEliminar.dataset.post = dataPost.id;
   btnEditar.dataset.post = dataPost.id;
-  // Events buttons
+  // Event button edit
   btnEditar.addEventListener("click", (event) => {
     const idPost = event.target.dataset.post;
     window.location.href = "http://127.0.0.1:5500/pages/Edit/?id=" + idPost;
   });
+  // Event button delete
 
   const divButtons = document.createElement("div");
   divButtons.className = "gap-2";
@@ -107,9 +161,7 @@ const renderPost = (dataPost) => {
   cardBody.className = "card-body";
 
   cardBody.appendChild(cardAuthor);
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardDescription);
-  cardBody.appendChild(listTags);
+  cardBody.appendChild(rowContainer);
 
   // element image post
   const imgPost = document.createElement("img");
@@ -207,7 +259,7 @@ const getPostsApi = async () => {
     const parsed = await response.json();
     const results = parserResponsePostFireBase(parsed);
     cleanList();
-    renderListPost(results);
+    renderListPost(results.reverse());
   } catch (error) {
     console.error(error);
   }
