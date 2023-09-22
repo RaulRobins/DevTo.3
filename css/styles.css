@@ -394,7 +394,7 @@ h2 {
 }
 
 .link__card {
-  color: #3B49DF;
+  color: #3b49df;
 }
 
 /*  dev community cards */
@@ -471,23 +471,31 @@ h2 {
     display: none;
   }
 }
-.aside2__container1, .aside2__container2, .aside2__container3 {
+.aside2__container1,
+.aside2__container2,
+.aside2__container3 {
   font-family: sans-serif;
   color: #a1a1a1;
 }
 
-.aside2__container-1, .aside2__container-2, .aside2__container-3 {
+.aside2__container-1,
+.aside2__container-2,
+.aside2__container-3 {
   color: rgb(64, 64, 64);
   font-size: 16px;
   font-weight: 300;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.aside2__container-1:hover, .aside2__container-2:hover, .aside2__container-3:hover {
+.aside2__container-1:hover,
+.aside2__container-2:hover,
+.aside2__container-3:hover {
   color: rgb(59, 73, 223);
 }
 
-.aside2_secondary-1, .aside2_secondary-2, .aside2_secondary-3 {
+.aside2_secondary-1,
+.aside2_secondary-2,
+.aside2_secondary-3 {
   font-size: 14px;
   color: #a1a1a1;
 }
