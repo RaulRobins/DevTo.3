@@ -1,7 +1,9 @@
 /* Variables */
+let allPost = [];
+let filteredPost =[];
 const URL_FIREBASE =
   "https://challenge3-92fe2-default-rtdb.firebaseio.com/.json";
-  let allPost = [];
+
 
 /* Elements DOM */
 const searchButton = document.querySelector("#searchButton");
@@ -154,6 +156,7 @@ const parserResponsePostFireBase = (object) => {
     };
     listPostParsed.push(obectParsed);
   }
+  allPost = listPostParsed;
   return listPostParsed;
 };
 
@@ -161,9 +164,27 @@ const parserResponsePostFireBase = (object) => {
 //Search Button
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
-  const searchPost = document.querySelector("#searchInput");
-  console.log(allPost);
-
+  filteredPost = []
+  const searchPost = document.querySelector("#searchInput").value;
+  if (searchPost.trim().length === 0) {
+    console.log("This is an empty string!");
+    filteredPost = allPost;
+    console.log(filteredPost);
+  }
+  else{
+    filterListPost = allPost.forEach((post)=>{
+    const result = post.title.match(searchPost);  
+    console.log(result)
+    if (result != null) {
+      const coincidence = post.title;
+      filteredPost = allPost.filter(post => post.title === coincidence);      
+    }
+    
+  })
+  console.log(filteredPost);
+}
+cleanList();
+renderListPost(filteredPost);
 });
 
 //Create Post Button
@@ -172,7 +193,6 @@ createPostButton.addEventListener("click", (event) => {
   window.location.href = "http://127.0.0.1:5500/pages/createPost";
 });
 
-//Filter Posts
 
 
 
