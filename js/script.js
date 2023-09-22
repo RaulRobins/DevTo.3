@@ -102,7 +102,7 @@ const parserResponsePostFireBase = (object) => {
   const listPostParsed = [];
 
   for (const key in object) {
-    const obectParsed = {
+    const posts= {
       id: key,
       title: object[key].title,
       img_url: object[key].img_url,

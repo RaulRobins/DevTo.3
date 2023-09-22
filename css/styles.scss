@@ -33,6 +33,11 @@
 
 }
 
+#searchInput::-webkit-search-cancel-button{
+    display: none;   
+}
+
+
 .notifications-logo{
     filter: invert(20%) sepia(18%) 
     saturate(19%) hue-rotate(57deg) brightness(99%) contrast(84%);
