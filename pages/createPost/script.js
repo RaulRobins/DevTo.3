@@ -33,4 +33,4 @@ publishButton.addEventListener("click", () => {
   console.log(post)
   
  
-  });
+});
