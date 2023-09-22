@@ -59,17 +59,19 @@ const renderPost = (dataPost) => {
   iconRead.className = "comments__number_icon";
   iconRead.src = "./img/icons/iconReaction.svg";
   iconRead.alt = "icon message";
-  const txtMinute = document.createElement("p");
-  txtMinute.className = "minute-read-font";
-  txtMinute.textContent = dataPost.time_read + " " + "min" + "" + "read";
+  const txtMinute = document.createElement("span");
+  txtMinute.className = "";
+  txtMinute.style = "color: gray; font-size:12px";
+  txtMinute.textContent = dataPost.time_read + " " + "min" + " " + "read";
   const minuteReaction = document.createElement("div");
-  minuteReaction.className = "last__minute__reaction d-flex";
+  minuteReaction.className = "last__minute__reaction";
+  minuteReaction.style = "width: 18%; display: flex";
   minuteReaction.appendChild(txtMinute);
   minuteReaction.appendChild(iconRead);
 
   const multipleReactions = document.createElement("div");
   multipleReactions.className = "multiple__reactions__number";
-  multipleReactions.style = "width: 100%; margin-left: 8px";
+  multipleReactions.style = "width: 100%; margin-left: 8px;";
   multipleReactions.appendChild(anchorMainReactions);
   multipleReactions.appendChild(numberComments);
   multipleReactions.appendChild(minuteReaction);
