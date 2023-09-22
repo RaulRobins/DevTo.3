@@ -19,10 +19,13 @@ const createPost = async(post) => {
 publishButton.addEventListener("click", () => {
     const coverIMG = document.querySelector("#file");
     const newPostTitle = document.querySelector("#newPostTitle");
+    const hashTags = document.querySelector("#hashTags")
     const postContent = document.querySelector("#postcontent")
+    
     const post = {
       IMG: coverIMG.value, 
       TitlePost: newPostTitle.value,
+      Tags: hashTags.value,
       ContentPost: postContent.value,
 
     }
