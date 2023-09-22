@@ -13,9 +13,9 @@
   />
   
 </head>
-<body>
+<body class="body_container">
     <header class="header__nav bg-light position-sticky sticky-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <nav class="nav_menu navbar navbar-expand-lg bg-body-tertiary shadow-sm">
           <div class="container-fluid d-flex">
             <!--Button Ofcanvas-->
            
@@ -32,7 +32,7 @@
             
   
           <!--Search Icon-->
-          <div class="nav"> 
+          <div class="main_nav"> 
             <a class="edit_button d-block d-lg-none" href="">
            Edit
           </a>
@@ -42,13 +42,12 @@
             >Preview</a></div>
          
   
-            <!--User Account Button-->
-            
+
             </button>
           </div>
         </nav>
         <div class="main_container">
-         <div>
+         <div class="post_imput_container">
           <div class="first_box">
             <div>
               <input type="file" id="file" class="file_input">
@@ -57,28 +56,31 @@
               </label>
             </div>
             <div>
-              <input type="text" id="newPostTitle" class="newPost_input" placeholder="New post title here...">
+              <input type="text" id="newPostTitle" class="newPost_input" placeholder="New post title here..." maxlength="">
+            </div>
+            <div class="hash_tagsDiv">
+              <input type="text" id="hashTags" class="hash_tags" placeholder="add up to 4 tags...">
             </div>
          </div>
          <div class="second_box">
-          <div>
+          <div class="button_iconsBox">
             <div>
-              <button><span class="icons" ><img class="iconsimg" src="./img/B.svg" alt=""></span></button>
-              <button><span class="icons" ><img class="iconsimg" src="./img/I.svg" alt=""></span></button>
-              <button><span class="icons" ><img class="iconsimg" src="./img/link.svg" alt=""></span></button>
-              <button><span class="icons" ><img class="iconsimg" src="./img/NL.svg" alt=""></span></button>
-              <button><span class="icons" ><img class="iconsimg" src="./img/ul.svg" alt=""></span></button>
-              <button><span class="icons" ><img class="iconsimg" src="./img/img.svg" alt=""></span></button>
-              <button><span class="icons" ><img class="iconsimg" src="./img/optionMenu.svg" alt=""></span></button>
+              <button class="icon_buttons"><span class="icons" ><img class="iconsimg" src="./img/B.svg" alt=""></span></button>
+              <button class="icon_buttons"><span class="icons" ><img class="iconsimg" src="./img/I.svg" alt=""></span></button>
+              <button class="icon_buttons"><span class="icons" ><img class="iconsimg" src="./img/link.svg" alt=""></span></button>
+              <button class="icon_buttons"><span class="icons" ><img class="iconsimg" src="./img/NL.svg" alt=""></span></button>
+              <button class="icon_buttons"><span class="icons" ><img class="iconsimg" src="./img/ul.svg" alt=""></span></button>
+              <button class="icon_buttons"><span class="icons" ><img class="iconsimg" src="./img/img.svg" alt=""></span></button>
+              <button class="icon_dotsMenu"><span class="icons" ><img class="iconsimg" src="./img/optionMenu.svg" alt=""></span></button>
             </div>
           </div>
             <input type="text" name="" id="postcontent" class="details_input" placeholder="Write your post content here...">
           </div>
           <div>
-            <button type="submit" class="btn btn-info publish_button" id="Enviar">Publish</button>
-            <button>save</button>
-              <button><span class="home-icon" ><img class="icons" src="./img/settings.svg" alt=""></span></button>
-            <button>Revert</button>
+            <button type="submit" class="btn-info publish_button" id="Enviar">Publish</button>
+            <button class="save_button mr-2">Save draft</button>
+              <button class="settings_button mr-2"><span class="icons" ><img class="iconsimg" src="./img/settings.svg" alt=""></span></button>
+            <button class="revert_button mr-2">Revert new </button>
           </div>
           <div>
          </div>

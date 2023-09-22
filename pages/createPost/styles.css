@@ -5,79 +5,178 @@
     font-family: sans-serif, system-ui;
 }
 
+.main_nav{
+    display: flex;
+    position: relative;
+    bottom: 4px;
+}
+
+.body_container{
+    background-color: #f5f5f5;
+  }
+.nav_menu{
+    height: 2.5rem;
+}
+
 .first_box{
     padding: 10px;
-    height: 7rem;
+    height: 5.3rem;
+    font-size: 10px;
 }
 
 
 .pcreate{
     position: absolute;
-    left: 5rem;
+    left: 3rem;
+    height: 10px;
+    font-size: x-small;
 }
 
-.edit_button{
+.edit_button {
     text-decoration: none;
-    position: relative;
-    right: 15px;
+    
     padding-right: 10px;
     padding-left: 10px;
+    font-size: 10px;
+    color: black;
 }
 
 .preview_button{
     text-decoration: none;
     padding-right: 10px;
     padding-left: 10px;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
 }
 
 .main_container{
     height: 15rem;
     background: #fff;
+    display: flex;
+    justify-content: center;
 }
+
+.newPost_input{
+    font-size: x-large;
+    font-weight: 700;
+    color: black;
+    border: none;
+}
+
+.hash_tags{
+    border: none;
+}
+
+::placeholder{
+    color: #525252;
+    border: none;
+}
+
+
+.post_imput_container{
+    min-width: 20rem;
+    border: 1px solid rgb(233 233 233);
+    
+}
+
+
 
 .details_input{
     border: none;
+    height: 2rem;
+    width: 20rem;
+    font-size: x-small;
+    padding: 10px
+}
+.button_iconsBox{
+    background-color: #f5f5f5;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.icon_buttons{
+    border: none;
+    background: none;
+}
+.icon_dotsMenu{
+    border: none;
+    background: none;
+    position: relative;
+    left: 11rem;
 }
 
 .second_box{
     height: 10rem;
 }
 
-.icons{
-    height: 5px;
-    width: 20px;
-}
-
 .iconsimg{
-    height: 10px;
+    height: 13px;
     width: 15px;
+    
 }
 
 .site_logo{
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 25px;
 }
 
 .site-logo {
-    width: 50px;
+    width: 40px;
     height: 40px;
 }
 
 .file_input{
     display: none;
+
 }
 
 .file_label{
     border-radius: 3px;
-    border: 1px solid rgba(189, 189, 189, 0.806);
+    border: 1.2px solid rgb(195, 195, 195);
     background: #fff;
+    padding: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: xx-small;
+    font-weight: 500;
+    color: #3D3D3D;
+
 }
 
-.newPost_input{
-    border: none;
-}
 
 .publish_button{
-    height: 40px;
+    border-radius: 4px;
+    border: none;
+    background-color: #3b49df;
+    width: 51px;
+    height: 25px;
+    font-size: xx-small;
+    color: white;
+    font-weight: bold;
+}
+.save_button{
+    background: none;
+    border: none;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+}
+.settings_button{
+    background: none;
+    border: none;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+}
+
+.revert_button{
+    background: none;
+    border: none;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+}
+
+.mr-2{
+    margin-left: 10px;
 }
 
