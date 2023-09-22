@@ -4,15 +4,24 @@ const URL_FIREBASE =
 
 /* Elements DOM */
 const searchButton = document.querySelector("#searchButton");
+const createPostButton = document.querySelector(".create-post__button")
 const containerListPosts = document.querySelector("#list-posts");
 
 /* Functions */
+
+const cleanList = () => {
+  while(containerListPosts.firstChild) {
+    containerListPosts.removeChild(containerListPosts.firstChild)
+  }
+}
+
 const renderTag = (hashTag, container) => {
   const tag = document.createElement("li");
   tag.className = "card__tag me-2";
   tag.textContent = hashTag;
   container.appendChild(tag);
 };
+
 const renderListTags = (listTags, tag) => {
   listTags.forEach((element) => {
     renderTag(element, tag);
@@ -132,6 +141,12 @@ searchButton.addEventListener("click", (event) => {
   console.log(searchPost.value);
 });
 
+//Create Post Button
+
+createPostButton.addEventListener("click", (event) => {
+  window.location.href = 'http://127.0.0.1:3000/pages/createPost/index.html'  
+});
+
 //Filter Posts
 // var filteredPosts = listPostParsed.filter(function (posts) {});
 
@@ -143,7 +158,7 @@ const getPostsApi = async () => {
     });
     const parsed = await response.json();
     const results = parserResponsePostFireBase(parsed);
-    // cleanList();
+    cleanList();
     renderListPost(results);
   } catch (error) {
     console.error(error);
