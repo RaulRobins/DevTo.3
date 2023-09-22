@@ -51,7 +51,7 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav mb-2 mb-0 m-lg-2"></ul>
-          <form class="d-md-flex w-50" role="search" id="searchForm">
+          <form class="d-md-flex w-50" role="search">
             <input
               class="form-control me-2"
               id = "searchInput"
@@ -196,11 +196,7 @@
           </aside>
         </div>
         <!--  first aside end -->
-
-        </aside>
-
-      <!--Post Cards Start Here -------------------------------------------------->
-        <main class="posts_container col-12 col-md-9 col-lg-6 ">
+        <main class="posts_container col-12 col-md-9 col-lg-6">
           <header class="p-2 px-3 m:p-0 m:px-0 m:mb-2 mt-3">
             <nav class="-mx-3 m:mx-0 s:flex items-center justify-between">
               <ul class="d-flex list-unstyled">
@@ -220,16 +216,126 @@
                 </li>
               </ul>
             </nav>
-          </header>          
+          </header>
+          <!-- Cards Main -->
+          <section id="list-posts">
+            <!-- <div class="card"> -->
+              <!-- <img
+                src="https://res.cloudinary.com/practicaldev/image/fetch/s--KtT0qK2I--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j6e0763icp0a80ilsw0q.png"
+                class="card-img-top"
+                alt="..."
+              /> -->
+              <!-- <div class="card-body"> -->
+                <!-- Author -->
+                <!-- <div class="card__top--content d-flex flex-row">
+                  <div class="card__top--photo-name d-flex flex-row">
+                    <div class="card__comment--image">
+                      <a class="card__comment--image--final d-flex" href="/">
+                        <img
+                          src="https://res.cloudinary.com/practicaldev/image/fetch/s--bqhtZWBh--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/68266/a52576e7-3c2a-460e-944f-b8f5ba2af41c.jpg"
+                          alt="" />
+                      </a>
+                    </div>
+                    <div class="name__date--container d-flex flex-column">
+                      <a href="./index-post.html">Casper</a>
+                      <a href=""> Aug 3 (6days ago)</a>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- Title -->
+                <!-- <h5 class="card-title">
+                  Creating a Sinatra API with system-wide dependency injection
+                  using dry-system and rom-rb
+                </h5> -->
+                <!-- Description -->
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                <!-- Tags -->
+                <!-- <ul class="card__tags d-flex flex-wrap list-unstyled">
+                  <li class="card__tag me-2">#ruby</li>
+                  <li class="card__tag me-2">#programming</li>
+                  <li class="card__tag me-2">#architecture</li>
+                  <li class="card__tag me-2">#sinatra</li>
+                  <li class="card__tag me-2">#bootstrap</li>
+                </ul> -->
+
+                <!-- Interaction -->
+                <!-- <div class="multiple__reactions__number">
+                  <a class="main__reaction--container" href="">
+                    <span class="multiple__reactions--container">
+                      <span class="reaction--item">
+                        <img
+                          src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
+                          alt="" /></span
+                      ><span class="reaction--item">
+                        <img
+                          src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"
+                          alt="" /></span
+                      ><span class="reaction--item"
+                        ><img
+                          src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
+                          alt="" /></span
+                      ><span class="reaction--item"
+                        ><img
+                          src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
+                          alt="" /></span
+                      ><span class="reaction--item"
+                        ><img
+                          src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"
+                          alt=""
+                      /></span>
+                    </span>
+                    <span class="reactions--number-final">123</span>
+                    
+  
+                    <a class="comments__number--cards d-flex align-items-center">
+                      <img class="comments__number_icon" src="./img/icons/messaje.svg" alt="" />
+                      <span class="comments__number--card">14</span>
+                    </a>
+                    <div class="last__minute__reaction d-flex">
+                      <p class="minute-read-font">1min read</p>
+                      <span class="button-reaction-menu">
+                       <img src="./img/icons/iconReaction.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+                </div> -->
+                <!-- Comments -->
+                <!-- <div class="card__comments--container">
+                  <div class="card__comment--item d-flex">
+                    <div class="card__comment--image">
+                      <a href="">
+                        <img
+                          src="https://res.cloudinary.com/practicaldev/image/fetch/s--NlfbOS9M--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/976635/cbd32d54-eb39-4cbe-81f7-000df3554a8c.jpeg"
+                          alt="" 
+                        />     
+                      </a>
+                    </div>
+                    <div class="card__comment--body">
+                      <div class="card__comment--body--name--date">
+                        <p>Ben Halpern Aug 2</p>
+                      </div>
+                      <div class="card__comment--body--content">
+                        <p>
+                          I completely agree that you don't want a single mentor.
+                          The idea of having lots of people in your corner that
+                          you can talk to and get diverse opinions.
+                        </p>
+                        <p>
+                          The self direction and continuous learning component
+                          here is important too. Thanks!
+                        </p>
+                        <p>Kudos.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="number__of__coments d-flex justify-content-center">
+                    <p class="see--comments--button">See all 18 comments</p>
+                  </div>
+                </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          </section>
         </main>
-
-        <!--Post Cards Ends Here -------------------------------------------------->
-
-
-
-
-
-
                 <!-- Aside2 --> <!--DIV ASIDE2 COMPLETE CONTAINER   -->
                 <div class="aside2__container1 d-none col-lg-3 d-lg-block ">
                   <aside class="aside__inside_containers rounded-1 mt-3 bg-white">
