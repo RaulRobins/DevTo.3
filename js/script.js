@@ -5,15 +5,24 @@ const URL_FIREBASE =
 
 /* Elements DOM */
 const searchButton = document.querySelector("#searchButton");
+const createPostButton = document.querySelector(".create-post__button");
 const containerListPosts = document.querySelector("#list-posts");
 
 /* Functions */
+
+const cleanList = () => {
+  while (containerListPosts.firstChild) {
+    containerListPosts.removeChild(containerListPosts.firstChild);
+  }
+};
+
 const renderTag = (hashTag, container) => {
   const tag = document.createElement("li");
   tag.className = "card__tag me-2";
   tag.textContent = hashTag;
   container.appendChild(tag);
 };
+
 const renderListTags = (listTags, tag) => {
   listTags.forEach((element) => {
     renderTag(element, tag);
@@ -62,10 +71,34 @@ const renderPost = (dataPost) => {
   cardAuthorContainer.appendChild(authorImage);
   cardAuthorContainer.appendChild(authorNameDate);
 
+  // Buttons
+  const btnEliminar = document.createElement("button");
+  const btnEditar = document.createElement("button");
+  const iconEliminar = document.createElement("img");
+  const iconEditar = document.createElement("img");
+  btnEliminar.className = "btn btn-danger m1";
+  btnEditar.className = "btn btn-info m-1";
+  btnEliminar.textContent = "Eliminar";
+  btnEditar.textContent = "Editar";
+  btnEliminar.dataset.post = dataPost.id;
+  btnEditar.dataset.post = dataPost.id;
+  // Events buttons
+  btnEditar.addEventListener("click", (event) => {
+    const idPost = event.target.dataset.post;
+    window.location.href = "http://127.0.0.1:5500/pages/Edit/?id=" + idPost;
+  });
+
+  const divButtons = document.createElement("div");
+  divButtons.className = "gap-2";
+  divButtons.appendChild(btnEditar);
+  divButtons.appendChild(btnEliminar);
+
   const cardAuthor = document.createElement("div");
-  cardAuthor.className = "card__top--content d-flex flex-row";
+  cardAuthor.className = "card__top--content d-flex justify-content-between";
+  cardAuthor.style = "width: 100%;";
 
   cardAuthor.appendChild(cardAuthorContainer);
+  cardAuthor.appendChild(divButtons);
 
   // element card body
   const cardBody = document.createElement("div");
@@ -90,7 +123,6 @@ const renderPost = (dataPost) => {
   card.appendChild(cardBody);
 parserResponsePostFireBase
   containerListPosts.append(card);
-  console.log(dataPost);
 };
 
 const renderListPost = (listPosts) => {
@@ -134,6 +166,12 @@ searchButton.addEventListener("click", (event) => {
 
 });
 
+//Create Post Button
+createPostButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href = "http://127.0.0.1:5500/pages/createPost";
+});
+
 //Filter Posts
 
 
@@ -148,8 +186,7 @@ const getPostsApi = async () => {
     });
     const parsed = await response.json();
     const results = parserResponsePostFireBase(parsed);
-    allPost = results;
-    // cleanList();
+    cleanList();
     renderListPost(results);
   } catch (error) {
     console.error(error);
