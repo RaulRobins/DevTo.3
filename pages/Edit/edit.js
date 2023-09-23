@@ -1,12 +1,7 @@
-//ACCEDER A POST POR HASH
-editButton.addEventListener("click", () => {
-  const elementToEdit = event.target.dataset.post //OJO CON EL POST
-  window.location.href = 'http://127.0.0.1:5500/?id=' + elementToEdit
-})
-
 //ACCEDER A URL 
 const URL_FIREBASE_BY_ID = "https://challenge3-92fe2-default-rtdb.firebaseio.com/" 
 const search = window.location.search;
+console.log(URL_FIREBASE_BY_ID);
 const url = new URLSearchParams(search);
 const ID_POST = url.get("id");
 //VARIABLES A OBTENER
@@ -16,22 +11,32 @@ const hashTags = document.querySelector("#hashTags")
 const postContent = document.querySelector("#postcontent")
 const editButton = document.querySelector("#Enviar");
 //const editButton = document.createElement ("button")
+const post = {
+  IMG: coverIMG.value, 
+  TitlePost: newPostTitle.value,
+  Tags: hashTags.value,
+  ContentPost: postContent.value,
 
+ }
 //OBTENER POSTS CREADOS
 const getInfoByID = async () => {
   const url = URL_FIREBASE_BY_ID + ID_POST + ".json";
+  console.log(url);
   const info = await fetch (url);
   const parsed = await info.json();
-  coverIMG.value = parsed.name
-  newPostTitle.value = parsed.name
-  hashTags.value = parsed.name
-  postContent.value = parsed.name
+  console.log(parsed)
+  coverIMG.value = parsed.IMG;
+  newPostTitle.value = parsed.TitlePost
+  hashTags.value = parsed.Tags
+  postContent.value = parsed.ContentPost
 }
 //FUNCIÓN PARA EDITAR
 const updatePost = async () => {
   const postToEdit = {
-    name : "Fermin",
-    lastName : "Monreal"
+    coverIMG : "Fermin",
+    newPostTitle : "Monreal",
+    hashTags : "",
+    postContent : "",
   };
   const url = URL_FIREBASE_BY_ID + ID_POST + ".json";
   const response = await fetch (url, {
@@ -50,6 +55,7 @@ editButton.addEventListener("click", () => {
   updatePost()
 })    
 
+getInfoByID()
 
 //FUNCIÓN EDITAR EN BASE DE DATOS
 
