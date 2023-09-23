@@ -140,6 +140,10 @@ const renderPost = (dataPost) => {
     window.location.href = "http://127.0.0.1:5500/pages/Edit/?id=" + idPost;
   });
   // Event button delete
+ btnEliminar.addEventListener("click", (event) => {
+  const idPost = event.target.dataset.post; // aqui obtengo el hash
+  eliminarPostApi(idPost);
+ })
 
   const divButtons = document.createElement("div");
   divButtons.className = "gap-2";
@@ -240,4 +244,22 @@ const getPostsApi = async () => {
   }
 };
 
+const eliminarPostApi = async (id) => { 
+  const URL_FIREBASE_BY_POST = "https://challenge3-92fe2-default-rtdb.firebaseio.com/" + id + ".json";
+  try{ 
+    const response = await fetch(URL_FIREBASE_BY_POST,{
+      method: "DELETE",
+    });
+    if (response.status === 200){
+      getPostsApi();
+    }
+
+  }catch (error){
+    console.error(error);
+  }
+}
+
+
 getPostsApi();
+
+
