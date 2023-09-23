@@ -228,7 +228,9 @@ searchButton.addEventListener("click", (event) => {
 
     if (result != null) {
       const coincidence = post.title;
-      filteredPost = allPost.filter(post => post.title === coincidence);      
+      if (post.title ===coincidence){
+        filteredPost.push(post);
+      }     
     }
     
   })
