@@ -544,7 +544,15 @@ h2 {
   position: relative;
   bottom: 100px;
 }
+.card-title {
+  font-size: 28px;
+  font-weight: 800;
 
+  &:hover {
+    color: #3b49df;
+    cursor: pointer;
+  }
+}
 .card__title__header {
   padding: 8px;
 }
