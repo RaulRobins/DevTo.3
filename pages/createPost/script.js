@@ -64,10 +64,6 @@ publishButton.addEventListener("click", () => {
         ],
       };
 
-         
-
-     
-
   createPost(posts)
   
   });
