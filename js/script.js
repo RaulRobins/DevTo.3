@@ -89,8 +89,12 @@ const renderPost = (dataPost) => {
   // element title
   const cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
-  cardTitle.style = "font-size:28px; font-weight: 800";
   cardTitle.textContent = dataPost.title;
+  cardTitle.dataset.post = dataPost.id;
+  cardTitle.addEventListener("click", (event) => {
+    const numPost = event.target.dataset.post;
+    window.location.href = "http://127.0.0.1:5500/pages/post/?num=" + numPost;
+  });
 
   const rowContainer = document.createElement("div");
   rowContainer.className = "row container";
@@ -142,10 +146,10 @@ const renderPost = (dataPost) => {
     window.location.href = "http://127.0.0.1:5500/pages/Edit/?id=" + idPost;
   });
   // Event button delete
- btnEliminar.addEventListener("click", (event) => {
-  const idPost = event.target.dataset.post; // aqui obtengo el hash
-  eliminarPostApi(idPost);
- })
+  btnEliminar.addEventListener("click", (event) => {
+    const idPost = event.target.dataset.post; // aqui obtengo el hash
+    eliminarPostApi(idPost);
+  });
 
   const divButtons = document.createElement("div");
   divButtons.className = "gap-2";
@@ -219,29 +223,25 @@ const parserResponsePostFireBase = (object) => {
 //Search Button
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
-  filteredPost = []
+  filteredPost = [];
   const searchPost = document.querySelector("#searchInput").value;
   if (searchPost.trim().length === 0) {
     filteredPost = allPost;
+  } else {
+    filterListPost = allPost.forEach((post) => {
+      const lowerCase = post.title.toLowerCase();
+      const result = lowerCase.match(searchPost.toLowerCase());
 
+      if (result != null) {
+        const coincidence = post.title;
+        if (post.title === coincidence) {
+          filteredPost.push(post);
+        }
+      }
+    });
   }
-  else{
-    filterListPost = allPost.forEach((post)=>{
-    const lowerCase = post.title.toLowerCase();
-    const result = lowerCase.match(searchPost.toLowerCase());  
-
-    if (result != null) {
-      const coincidence = post.title;
-      if (post.title ===coincidence){
-        filteredPost.push(post);
-      }     
-    }
-    
-  })
-
-}
-cleanList();
-renderListPost(filteredPost);
+  cleanList();
+  renderListPost(filteredPost);
 });
 
 //Create Post Button
@@ -268,22 +268,19 @@ const getPostsApi = async () => {
   }
 };
 
-const eliminarPostApi = async (id) => { 
-  const URL_FIREBASE_BY_POST = "https://challenge3-92fe2-default-rtdb.firebaseio.com/" + id + ".json";
-  try{ 
-    const response = await fetch(URL_FIREBASE_BY_POST,{
+const eliminarPostApi = async (id) => {
+  const URL_FIREBASE_BY_POST =
+    "https://challenge3-92fe2-default-rtdb.firebaseio.com/" + id + ".json";
+  try {
+    const response = await fetch(URL_FIREBASE_BY_POST, {
       method: "DELETE",
     });
-    if (response.status === 200){
+    if (response.status === 200) {
       getPostsApi();
     }
-
-  }catch (error){
+  } catch (error) {
     console.error(error);
   }
-}
-
+};
 
 getPostsApi();
-
-
