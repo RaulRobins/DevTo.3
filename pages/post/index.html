@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="../../css/styles-post.css" />
   </head>
-  <body>
+  <body class="bg-light">
     <header class="header__nav bg-light position-sticky sticky-top">
       <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
         <div class="container d-flex">
@@ -79,22 +79,34 @@
         </div>
       </nav>
     </header>
-    <div class="container text-center mt-5">
+    <div class="container mt-3">
       <div class="row">
         <!-- ASIDE -->
         <aside class="aside__container-left col-1">
           <div class="reaction_container mt-5 sticky-top custom-sticky-top">
             <div class="reaction__container-grid">
               <div class="reaction-like">
-                <img class="reaction-heart" src="images/heart.svg" alt="" />
+                <img
+                  class="reaction-heart"
+                  src="../../img/icons/icon-head-plus.svg"
+                  alt=""
+                />
                 <p class="like-reactions-counts">122</p>
               </div>
               <div class="reaction-comments">
-                <img src="images/comment.svg" alt="" class="reaction-icon" />
+                <img
+                  src="../../img/icons/Comment.svg"
+                  alt=""
+                  class="reaction-icon"
+                />
                 <p class="comment-reactions-count">13</p>
               </div>
               <div class="reaction-save">
-                <img src="images/save.svg" alt="" class="reaction-icon" />
+                <img
+                  src="../../img/icons/iconReaction.svg"
+                  alt=""
+                  class="reaction-icon"
+                />
                 <p class="save-reaction-count">50</p>
               </div>
               <div class="reaction-more-options">
@@ -109,10 +121,9 @@
           </div>
         </aside>
         <!-- ASIDE -->
-
         <!-- MAIN -->
         <main class="main__container col-8">
-          <div class="article-wraper">
+          <section class="article-wraper card">
             <article class="post_container pb-5">
               <header class="post-article-header">
                 <div class="image-article-header">
@@ -245,7 +256,8 @@
                 </div>
               </div>
             </article>
-            <section class="comments-section__container pt-3 mt-1">
+            <hr />
+            <article class="comments-section__container pt-3 mt-1">
               <header class="comments-section-title mx-5">
                 <div
                   class="comment-title mt-3 d-flex justify-content-between align-items-center"
@@ -289,11 +301,18 @@
                 </div>
                 <!-- ´posibles comentarios -->
               </header>
-            </section>
-          </div>
+            </article>
+          </section>
+          <!-- Start Section Dev Community -->
+          <section class="dev-community__container card mt-3">
+            <h2>DEV Author Spotlight</h2>
+          </section>
+          <!-- Start Section Read next -->
+          <section class="read-next__container card mt-3">
+            <h2>Read next</h2>
+          </section>
         </main>
         <!-- MAIN -->
-
         <!-- ASIDE -->
         <aside class="right-aside col-lg-3 d-none d-lg-block">
           <div class="card__container card" style="border-top: 30px solid">
@@ -377,6 +396,98 @@
         </aside>
         <!-- ASIDE -->
       </div>
+      <!-- Start Footer -->
+      <footer class="container-fluid text-center mt-5 mb-5">
+        <div class="row-5 text-black">
+          <div class="xs-12 md-6 slg-1">
+            <p>
+              <a href="#">DEV Community </a>-- A constructive and inclusive
+              social network for software developers. With you every step of
+              your journey.
+            </p>
+            <ul class="d-flex flex-row justify-content-center mb-1 px-1">
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Home</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Listings</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Podcasts</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Videos</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Tags</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">FAQ</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#"
+                  >Forem Shop</a
+                >
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#"
+                  >Advertise on DEV</a
+                >
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">About</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Contact</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#">Guides</a>
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#"
+                  >Software comparisons</a
+                >
+              </li>
+            </ul>
+            <ul class="d-flex flex-row justify-content-center mb-1 px-1">
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#"
+                  >Code of Conduct</a
+                >
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li class="mx-3">
+                <a class="text black text-decoration-none" href="#"
+                  >Term of use</a
+                >
+              </li>
+            </ul>
+            <p>
+              Built on
+              <a class="text blue text text-decoration-none" href="#">Forem</a>
+              — the
+              <a class="text blue text text-decoration-none" href="#"
+                >open surce</a
+              >
+              software that powers
+              <a class="text blue text text-decoration-none" href="#">DEV</a>
+              and other inclusive communities.
+            </p>
+            <p>
+              Made with love and
+              <a class="text blue text text-decoration-none" href="#"
+                >Ruby on Rails.</a
+              >
+              DEV Community © 2016 - 2023.
+            </p>
+          </div>
+        </div>
+      </footer>
+      <!-- End Footer -->
     </div>
   </body>
 </html>
